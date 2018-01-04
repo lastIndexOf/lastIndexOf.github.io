@@ -6,8 +6,8 @@
   "author": "<kg.zheng@dji.com>",
   "license": "MIT",
   "scripts": {
-    "dev-react": "rm -rf dist/ && rm -rf .cache/ && NODE_ENV=development parcel index-react.html",
-    "dev-vue": "rm -rf dist/ && rm -rf .cache/ && NODE_ENV=development parcel index-vue.html"
+    "dev": "rm -rf dist/ && rm -rf .cache/ && NODE_ENV=development parcel index-dev.html -p 4000",
+    "build": "rm -rf dist/ && rm -rf .cache/ && NODE_ENV=production parcel build index-dev.html && mv ./dist/index-dev.html ./index.html"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -16,5 +16,10 @@
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.4.1",
     "parcel-plugin-vue": "^1.5.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   }
 }
