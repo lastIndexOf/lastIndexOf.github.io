@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "rm -rf dist/ && rm -rf .cache/ && NODE_ENV=development parcel index-dev.html -p 4000",
-    "build": "rm -rf dist/ && rm -rf .cache/ && NODE_ENV=production parcel build index-dev.html && mv ./dist/index-dev.html ./index.html"
+    "build": "rm -rf dist/ && rm -rf .cache/ && rm index.html && NODE_ENV=production parcel build index-dev.html && mv ./dist/index-dev.html ./index.html"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
