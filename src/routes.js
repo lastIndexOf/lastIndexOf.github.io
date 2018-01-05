@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router'
 import Index from './views/pages/Index/Index'
 import Animation from './views/pages/Animation/Animation'
+import AnimePage from './views/pages/Animation/_id?AnimaPage'
 
 let routes = [
   {
@@ -8,8 +9,8 @@ let routes = [
     component: Index
   },
   {
-    path: '/animation',
-    component: Animation
+    path: '/animation/:id',
+    component: Animation,
   }
 ]
 
