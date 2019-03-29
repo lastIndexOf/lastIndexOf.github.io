@@ -1,0 +1,1 @@
+{"version":3,"file":"remoteHosts.js","sourceRoot":"file:///Users/zhengfankai/Desktop/vscode/src","sources":["vs/platform/remote/common/remoteHosts.ts"],"names":[],"mappings":"AAAA;;;gGAGgG;;;;IAInF,QAAA,kBAAkB,GAAG,eAAe,CAAC;IAElD,SAAgB,kBAAkB,CAAC,GAAQ;QAC1C,OAAO,GAAG,CAAC,MAAM,KAAK,0BAAkB,CAAC,CAAC,CAAC,GAAG,CAAC,SAAS,CAAC,CAAC,CAAC,SAAS,CAAC;IACtE,CAAC;IAFD,gDAEC"}

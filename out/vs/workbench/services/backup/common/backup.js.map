@@ -1,0 +1,1 @@
+{"version":3,"file":"backup.js","sourceRoot":"file:///Users/zhengfankai/Desktop/vscode/src","sources":["vs/workbench/services/backup/common/backup.ts"],"names":[],"mappings":"AAAA;;;gGAGgG;;;;IAOnF,QAAA,kBAAkB,GAAG,+BAAe,CAAqB,mBAAmB,CAAC,CAAC;IAE9E,QAAA,2BAA2B,GAA2B,EAAE,cAAc,EAAE,IAAI,EAAE,QAAQ,EAAE,MAAM,EAAE,CAAC;IACjG,QAAA,0BAA0B,GAA0B,EAAE,QAAQ,EAAE,MAAM,EAAE,CAAC"}
