@@ -1,0 +1,245 @@
+{
+	"name": "fes-tool",
+	"displayName": "fes-tool",
+	"description": "FES工具",
+	"keywords": [
+		"vscode",
+		"fes",
+		"tool"
+	],
+	"version": "1.0.0",
+	"publisher": "zhengfankai",
+	"engines": {
+		"vscode": "^1.27.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.png",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./src/extension",
+	"contributes": {
+		"keybindings": [],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "fes-components",
+					"title": "网站结构",
+					"icon": "images/fes-tool.svg"
+				}
+			]
+		},
+		"views": {
+			"fes-components": [
+				{
+					"id": "tree",
+					"name": "SANDBOX STRUCTURE"
+				}
+			],
+			"explorer": [
+				{
+					"id": "depsOutline",
+					"name": "Dependencies"
+				}
+			]
+		},
+		"menus": {
+			"editor/title": [
+				{
+					"command": "tree.preview",
+					"group": "navigation"
+				}
+			],
+			"view/title": [
+				{
+					"command": "tree.refreshTree",
+					"when": "view == tree",
+					"group": "navigation"
+				},
+				{
+					"command": "tree.addDir",
+					"when": "view == tree",
+					"group": "navigation"
+				},
+				{
+					"command": "depsOutline.addDepdence",
+					"when": "view == depsOutline",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "tree.addPage",
+					"when": "view == tree && viewItem == dir",
+					"group": "inline"
+				},
+				{
+					"command": "tree.deleteDir",
+					"when": "view == tree && viewItem == dir",
+					"group": "inline"
+				},
+				{
+					"command": "tree.editPage",
+					"when": "view == tree && viewItem == page",
+					"group": "inline"
+				},
+				{
+					"command": "tree.deletePage",
+					"when": "view == tree && viewItem == page",
+					"group": "inline"
+				},
+				{
+					"command": "tree.moveMaterialToUp",
+					"when": "view == tree && viewItem == material",
+					"group": "inline"
+				},
+				{
+					"command": "tree.moveMaterialToDown",
+					"when": "view == tree && viewItem == material",
+					"group": "inline"
+				},
+				{
+					"command": "tree.deleteMaterial",
+					"when": "view == tree && viewItem == material",
+					"group": "inline"
+				},
+				{
+					"command": "depsOutline.deleteDep",
+					"when": "view == depsOutline && viewItem == dependence",
+					"group": "inline"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "tree.preview",
+				"title": "预览",
+				"icon": {
+					"light": "resources/preview.svg",
+					"dark": "resources/preview.svg"
+				}
+			},
+			{
+				"command": "tree.checkPage",
+				"title": "选中"
+			},
+			{
+				"command": "tree.editPage",
+				"title": "选中",
+				"icon": {
+					"light": "resources/check.svg",
+					"dark": "resources/check.svg"
+				}
+			},
+			{
+				"command": "tree.addDir",
+				"title": "新增目录",
+				"icon": {
+					"light": "resources/add.svg",
+					"dark": "resources/add.svg"
+				}
+			},
+			{
+				"command": "tree.addPage",
+				"title": "新增页面",
+				"icon": {
+					"light": "resources/add.svg",
+					"dark": "resources/add.svg"
+				}
+			},
+			{
+				"command": "tree.deleteDir",
+				"title": "删除目录",
+				"icon": {
+					"light": "resources/remove.svg",
+					"dark": "resources/remove.svg"
+				}
+			},
+			{
+				"command": "tree.deletePage",
+				"title": "删除页面",
+				"icon": {
+					"light": "resources/remove.svg",
+					"dark": "resources/remove.svg"
+				}
+			},
+			{
+				"command": "tree.deleteMaterial",
+				"title": "删除物料",
+				"icon": {
+					"light": "resources/remove.svg",
+					"dark": "resources/remove.svg"
+				}
+			},
+			{
+				"command": "tree.refreshTree",
+				"title": "刷新",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "tree.moveMaterialToUp",
+				"title": "上移物料",
+				"icon": {
+					"light": "resources/up.svg",
+					"dark": "resources/up.svg"
+				}
+			},
+			{
+				"command": "tree.moveMaterialToDown",
+				"title": "下移物料",
+				"icon": {
+					"light": "resources/down.svg",
+					"dark": "resources/down.svg"
+				}
+			},
+			{
+				"command": "tree.componentView",
+				"title": "Fes: Open Component Center"
+			},
+			{
+				"command": "depsOutline.deleteDep",
+				"title": "移除依赖",
+				"icon": {
+					"light": "resources/remove.svg",
+					"dark": "resources/remove.svg"
+				}
+			},
+			{
+				"command": "depsOutline.addDepdence",
+				"title": "新增依赖",
+				"icon": {
+					"light": "resources/add.svg",
+					"dark": "resources/add.svg"
+				}
+			},
+			{
+				"command": "depsOutline.doAddDepdence",
+				"title": "新增依赖"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^7.0.43",
+		"eslint": "^4.11.0",
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6"
+	},
+	"__metadata": {
+		"id": "ac2b7b16-d87f-4e51-87a8-37011e8aa713",
+		"publisherId": "cdd0fc1d-3acf-4250-a09b-95545e29bdbc",
+		"publisherDisplayName": "zhengfankai"
+	},
+	"dependencies": {
+		"axios": "^0.18.0"
+	}
+}
